@@ -10,15 +10,15 @@ spring:
           enabled: true
       routes:
         - id: customer-service
-          uri: lb://customer-service
+          uri: http://customer-service-101.gobierno.svc.cluster.local:8092
           predicates:
             - Path=/customers/**
         - id: product-service
-          uri: lb://product-service
+          uri: http://product-service-103.gobierno.svc.cluster.local:8091
           predicates:
             - Path=/products/**
         - id: shopping-service
-          uri: lb://shopping-service
+          uri: http://shopping-service-102.gobierno.svc.cluster.local:8093
           predicates:
             - Path=/invoices/**
 eureka:
